@@ -132,29 +132,168 @@
 				position: relative;
 				top: 100px;
 			}
+
+			#aboutContainer
+			{
+				width: 50%;
+				box-shadow: 0 1px 4px #ccc;
+				margin: 0 auto;
+				padding: 15px;
+				padding-left: 30px;
+				padding-right: 30px;
+				margin-bottom: 100px;
+			}
+
+			#aboutContainer p
+			{
+				font-family: 'Raleway', 'Arial', 'sans-serif';
+				text-transform: capitalize;
+				color:rgb(124,124,124);
+				font-size: 14px;
+				font-weight: 500;
+				text-align: left;
+				text-shadow:0 1px 1px grey;
+				letter-spacing: 1px;
+				word-spacing: 2px;
+			}
+
+			#myworkContainer
+			{
+				width: 80%;
+				margin: 0 auto;
+				padding: 15px;
+				padding-left: 30px;
+				padding-right: 30px;
+				margin-bottom: 100px;
+			}
+
+			.singleProject
+			{
+				width: 280px;
+				height: 300px;
+				margin: 10px;
+				display: inline-block;
+				background-color: #ececec;
+				vertical-align: top;
+			}
+
+			.singleProject p
+			{
+				font-size: 13px;
+				padding: 10px;
+				color: rgb(100,100,100);
+				font-weight: 700;
+				font-family: 'Raleway', 'Arial', 'sans-serif';
+				text-transform: lowercase;
+			}
+			.singleProject h3
+			{
+				font-size: 20px;
+				padding: 10px;
+				margin-top: 30px;
+				color: rgb(100,100,100);
+				font-weight: 500;
+				font-family: 'Raleway', 'Arial', 'sans-serif';
+				text-transform: uppercase;
+			}
+			#logo
+			{
+				position: fixed;
+				left: 20px;
+				z-index: 100;
+				top: -10px;
+				font-size: 28px;	
+			}
+
+			#logo a
+			{
+				text-decoration: none;
+			}
+
+			#logo p
+			{
+				font-family: 'Raleway', 'Arial', 'sans-serif';
+				letter-spacing: 1px;
+				font-weight: 500;
+			}
+
+			#spanned
+			{
+				font-weight:700;
+				font-size:24px;
+				font-family: 'Raleway', 'Arial', 'sans-serif';
+			}
+
 		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script type="text/javascript">
+
+			$(document).ready(function(){
+				$('a[href^="#"]').on('click',function (e) {
+				    e.preventDefault();
+
+				    var target = this.hash;
+				    var $target = $(target);
+
+				    $('html, body').stop().animate({
+				        'scrollTop': $target.offset().top
+				    }, 900, 'swing', function () {
+				        window.location.hash = target;
+				    });
+				});
+			});
+
+		</script>
 	</head>
 	<body>
 		<div id='layer'>
-			<div id='content' align='center'>		
+			<div id='content' align='center'>	
+				<div id="logo">
+					<a href="index.html"><p>(R<span id="spanned">C</span>)</p></a>
+				</div>	
 				<div id='links'>
-						<a href="">About Me</a>
+						<a href="#about">About Me</a>
 						/
 						<a href="http://home.iitk.ac.in/~romit/studentsearch" style=''>Student Search</a>
 						\
-						<a href="projects.html">My works</a>	
+						<a href="#mywork">My works</a>	
 				</div>
 				<br>
 				<div id="container">
-					<div id='image' style="text-align:center;">
-						<img align='center' src="vector2.jpg" width="260px" style='overflow:hidden;display:inline-block;'>
+					<div id="home">
+						<div id='image' style="text-align:center;">
+							<img align='center' src="vector2.jpg" width="260px" style='overflow:hidden;display:inline-block;'>
+						</div>
+						<div id='content-2'>
+							<div id='h1'>Romit Choudhary</div>
+							<div id='h4'>{ Pre-Final year Undergraduate Student }</div><br>
+							<div id='h4'>Biological Sciences and Bioengineering</div>
+							<div id='h4'>IIT Kanpur</div><br>
+							<a href="mailto:romit@iitk.ac.in">romit@iitk.ac.in</a> <br> <a href="mailto:choudharyromit@gmail.com">choudharyromit@gmail.com</a>
+						</div>
 					</div>
-					<div id='content-2'>
-						<div id='h1'>Romit Choudhary</div>
-						<div id='h4'>{ Pre-Final year Undergraduate Student }</div><br>
-						<div id='h4'>Biological Sciences and Bioengineering</div>
-						<div id='h4'>IIT Kanpur</div><br>
-						<a href="mailto:romit@iitk.ac.in">romit@iitk.ac.in</a> <br> <a href="mailto:choudharyromit@gmail.com">choudharyromit@gmail.com</a>
+					<div id="about">
+						<div id="aboutContainer">
+							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+							<br>
+							<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+						</div>
+					</div>
+					<div id="mywork">
+						<div id="myworkContainer">
+							<div class="singleProject">
+								<h3>Student Search</h3>
+								<p>A search engine for the campus students where one can search any of the student from the campus.</p>
+							</div>
+							<div class="singleProject">
+								<h3>Course Connect</h3>
+								<p>CourseConnect is an app developed where one can create a profile and add courses he had taken in his previous semesters and is taking now. Additional features such as sharing files, discussions, course reviews were also added to the app.</p>
+							</div>
+							<div class="singleProject">
+								<h3>URL SHORTENER SERVICE</h3>
+								<p>A url shortening service which converts long unsightly URL's to nice and small URL's. It was done using the URL rewriting method in PHP.</p>
+							</div>
+						</div>
 					</div>
 				</div>
 
